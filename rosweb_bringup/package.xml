@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>rosweb_bringup</name>
+  <version>1.0.0</version>
+  <description>The rosweb_bringup package</description>
+
+  <maintainer email="michelle.kusold@freshconsulting.com">M Kusold</maintainer>
+  <license>TODO</license>
+  <url type="repository">https://bitbucket.org/freshconsulting/TODO</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+</package>

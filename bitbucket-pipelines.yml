@@ -1,0 +1,19 @@
+image: atlassian/default-image:2
+
+options:
+  docker: true
+
+pipelines:
+  default:
+    - step:
+        script: 
+            - echo "Building docker image..." 
+            - docker-compose build .ci.env
+            - echo "Launching container..." 
+            - docker-compose up -f .ci.env
+            - echo "Running tests..."
+            - docker run -i --rm -p 0.0.0.0:8080:8080 rosweb/rosweb:latest cd ./src/d2 && make test 
+definitions:
+  services:
+    docker:
+      memory: 2048  # increase memory for docker-in-docker from 1GB to 2GB

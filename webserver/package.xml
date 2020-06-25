@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>webserver</name>
+  <version>1.0.0</version>
+  <description>The webserver package</description>
+
+  <maintainer email="michelle.kusold@freshconsulting.com">M Kusold</maintainer>
+  <license>TODO</license>
+  <url type="repository">https://bitbucket.org/freshconsulting/TODO</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <!-- Use build_depend for packages you need at compile time: -->
+  <build_depend>std_msgs</build_depend>
+  
+  <!-- Use build_export_depend for packages you need in order to build against this package: -->
+  <build_export_depend>std_msgs</build_export_depend>
+
+  <!-- Use exec_depend for packages you need at runtime: -->
+  <exec_depend>std_msgs</exec_depend>
+
+</package>
