@@ -13,6 +13,9 @@ clean: ## Removes compiled python code to ensure it is freshly regenerated on th
 register: ## Makes all necessary code executable so that they can be found and run by the launch file
 	@(cd ${CATKIN_WS}/src/${PKG_NAME} && find . -name '*.py' -exec chmod +x {} \;)
 
+.PHONY: graph
+graph:
+	@(rqt_graph)
 # TESTING
 .PHONY: coverage
 coverage: ## Creates coverage report for unit tests

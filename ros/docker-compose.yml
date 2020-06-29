@@ -20,8 +20,6 @@ services:
         environment:
             - DISPLAY=${HOST_IP}:0
             - QT_X11_NO_MITSHM=1
-
-            
         # allows us to attach to the container and examine it in development
         stdin_open: true
         tty: true
