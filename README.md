@@ -19,6 +19,11 @@ Create an extensible base template for ROS (1) projects that integrate with web 
 
 1. Download and setup [docker](https://www.docker.com/get-started)
 
+OSX:
+1. Download [XQuartz](https://www.xquartz.org/)
+2. Activate the option ‘Allow connections from network clients’ in XQuartz settings
+3. run `bash xquarzsetup.sh` and copy your IP address into the `.env` file
+
 ### ENV file
 
 1. The `.env` file stores the build and run configuration for the project's docker container.
