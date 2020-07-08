@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  rosweb_app:
+    container_name: ${PKG_NAME}
+    image: d2/${PKG_NAME}:${VERSION}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '0.0.0.0:4200:4200'
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    # allows us to attach to the container and examine it in development
+    stdin_open: true
+    tty: true
+    restart: always
+

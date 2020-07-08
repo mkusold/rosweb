@@ -1,9 +1,0 @@
-<launch>
-  <!-- Active Package Options -->
-  <arg name="using_webserver" default="true"/>
- 
-  <group if="$(arg using_webserver)">
-    <include file="$(find webserver)/launch/webserver.launch" />
-  </group>
-
-</launch>

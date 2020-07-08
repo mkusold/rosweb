@@ -53,6 +53,8 @@ RUN apt-get update && apt-get install -y \
   python-coverage \
   python-mock \
   # visualization tools
+  ros-${ROS_DISTRO}-turtlesim \
+  ros-${ROS_DISTRO}-rqt-graph \
   ros-${ROS_DISTRO}-rviz
 
 # Initialize local catkin workspace

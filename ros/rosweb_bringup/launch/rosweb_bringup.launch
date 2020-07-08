@@ -1,0 +1,13 @@
+<launch>
+  <!-- Active Package Options -->
+  <arg name="using_webserver" default="true"/>
+  <arg name="using_sim" default="true"/>
+
+  <group if="$(arg using_webserver)">
+    <include file="$(find webserver)/launch/webserver.launch" />
+  </group>
+  <group if="$(arg using_sim)">
+    <node pkg="turtlesim" name="sim" type="turtlesim_node" respawn="true"/>
+    <node pkg="turtlesim" name="teleop" type="turtle_teleop_key" respawn="true"/>
+  </group>
+</launch>

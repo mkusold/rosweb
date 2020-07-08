@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <h1>ROS Web</h1>
+    <div>
+      <a mat-button [routerLink]="'/ros-controller/home'">Home</a>
+      <a mat-button [routerLink]="'/ros-controller/example'">Second Page</a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="page-wrapper">
+  <router-outlet></router-outlet>
+</div>
