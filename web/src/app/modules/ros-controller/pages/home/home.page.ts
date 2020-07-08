@@ -11,9 +11,9 @@ import { Subscription } from 'rxjs';
 })
 export class HomePageComponent implements OnInit {
 
-  DirectionType: typeof Direction = Direction;
   poseSubscription: Subscription;
   speed: number;
+  angle: number;
 
   constructor(
     private api: ApiService,
@@ -21,13 +21,15 @@ export class HomePageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.poseSubscription = this.appStateQuery.select(state => state.pose.linearVelocity).subscribe(speed => {
-      this.speed = speed;
+    this.poseSubscription = this.appStateQuery.select(state => state.pose).subscribe(pose => {
+      this.speed = pose.linearVelocity;
+      // TODO: assign local 'angle' variable with subscription value
    });
  }
 
-  onDirectionComand(direction: Direction) {
-    this.api.sendMovementCommand(direction);
+  onUpCommand() {
+    this.api.sendMovementCommand(Direction.Up);
   }
 
+  // TODO: ADD DOWN COMMAND
 }

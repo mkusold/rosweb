@@ -1,1 +1,8 @@
-<router-outlet></router-outlet>
+<div class="loading"
+  *ngIf="(connected$ | async) === ConnectivityType.Connecting || (connected$ | async) === ConnectivityType.Disconnected">
+  <mat-spinner></mat-spinner>
+  <p>...Connecting</p>
+</div>
+<div *ngIf="(connected$ | async) === ConnectivityType.Connected">
+  <router-outlet></router-outlet>
+</div>

@@ -88,10 +88,17 @@ export class ApiService {
     return connection;
   }
 
+  // ====================================
+  // THIS IS AN EXAMPLE OF A SUBSCRIPTION
+  // ====================================
   subscribeToTurtlePose(): Unsubscribable {
-    const { telemetry: {pose} } = COMMUNICATION_INTERFACE;
+    const poseTopicInfo =  {
+      topic: '/turtle1/pose',
+      msgType: 'turtlesim/Pose',
+    };
 
-    const poseListener = this.createRosConnection(pose);
+    const poseListener = this.createRosConnection(poseTopicInfo);
+    // these fields such as 'linear_velocity' match up with the ROS message declaration
     poseListener.subscribe(({x, y, theta, linear_velocity, angular_velocity }) => {
       this.appState.updatePose({
         x,
@@ -104,7 +111,7 @@ export class ApiService {
     return poseListener;
   }
 
-  private calculateVelocity(direction: Direction) {
+  private createVelocityMessage(direction: Direction) {
     switch (direction) {
       case Direction.Up:
         return {
@@ -167,11 +174,17 @@ export class ApiService {
     }
   }
 
+  // ====================================
+  // THIS IS AN EXAMPLE OF A PUBLISHER
+  // ====================================
   sendMovementCommand(direction: Direction): void {
-    const { controller: { move } } = COMMUNICATION_INTERFACE;
-    const commandPublisher = this.createRosConnection(move);
+    const moveTopicInfo = {
+      topic: '/turtle1/cmd_vel',
+      msgType: 'geometry_msgs/Twist',
+    };
+    const commandPublisher = this.createRosConnection(moveTopicInfo);
 
-    const message = new ROSLIB.Message(this.calculateVelocity(direction));
+    const message = new ROSLIB.Message(this.createVelocityMessage(direction));
 
     commandPublisher.publish(message);
   }

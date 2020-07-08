@@ -1,8 +1,3 @@
-export interface AppState {
-  connected: Connectivity;
-  pose: Pose;
-}
-
 export enum Connectivity {
   Connected = 0,
   Connecting = 1,

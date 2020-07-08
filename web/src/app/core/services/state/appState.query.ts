@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Query } from '@datorama/akita';
 
-import { AppState, Connectivity, Pose } from './appState.interface';
+import { Connectivity, Pose } from './appState.interface';
 import { AppStore } from './app.store';
 
 /**
@@ -16,7 +16,7 @@ import { AppStore } from './app.store';
  * https://netbasal.gitbook.io/akita/core-concepts/the-query
  */
 @Injectable({ providedIn: 'root' })
-export class AppStateQuery extends Query<AppState> {
+export class AppStateQuery extends Query<any> {
 
   constructor(protected store: AppStore) {
     super(store);

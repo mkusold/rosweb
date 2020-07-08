@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Connectivity } from 'src/app/core/services/state/appState.interface';
+import { Observable } from 'rxjs';
+import { AppStateQuery } from 'src/app/core/services/state/appState.query';
 
 @Component({
   selector: 'app-ros-controller',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RosControllerComponent implements OnInit {
 
-  constructor() { }
+  ConnectivityType = Connectivity;
+  connected$: Observable<Connectivity>;
+
+  constructor(private appStateQuery: AppStateQuery) { }
 
   ngOnInit(): void {
+    this.connected$ = this.appStateQuery.select(state => state.connected);
   }
 
 }
