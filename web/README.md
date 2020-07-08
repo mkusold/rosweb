@@ -1,6 +1,12 @@
 # Web
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.2.
+## Technologies
+
+- This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.2. (Web UI Framework)
+- Material UI (Styling and Theming)
+- Akita (State Management)
+- RxJS (a library for reactive programming using observables that makes it easier to compose asynchronous or callback-based code)
+- RosLibJS (for communicating with ROS)
 
 ## Setup
 

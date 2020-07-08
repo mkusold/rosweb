@@ -6,7 +6,9 @@ const ROS_MSG_TYPES = {
   Boolean: 'std_msgs/Bool',
   String: 'std_msgs/String',
   // geometry
-  Twist: 'geometry_msgs/Twist'
+  Twist: 'geometry_msgs/Twist',
+  // custom
+  Pose: 'turtlesim/Pose',
 };
 
 export const COMMUNICATION_INTERFACE: CommunicationInterface = {
@@ -17,7 +19,20 @@ export const COMMUNICATION_INTERFACE: CommunicationInterface = {
   controller: {
     move: {
       topic: '/turtle1/cmd_vel',
-      msgType: ROS_MSG_TYPES.Twist
+      msgType: ROS_MSG_TYPES.Twist,
     }
   },
+  telemetry: {
+    pose: {
+      topic: '/turtle1/pose',
+      msgType: ROS_MSG_TYPES.Pose,
+    }
+  }
 };
+
+export enum Direction {
+    Up = 0,
+    Right = 1,
+    Down = 2,
+    Left = 3,
+}

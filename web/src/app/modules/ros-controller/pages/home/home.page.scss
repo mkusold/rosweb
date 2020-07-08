@@ -1,5 +1,8 @@
+.speed {
+  height: 2em;
+}
 .game-pad {
-  width: 10vw;
+  width: 20rem;
   padding: 0 2em 2em 2em;
 }
 
@@ -9,4 +12,27 @@
 
 .resources {
   padding-top: 2em;
+}
+
+@mixin change-button-size($btnsize,$fontsize) {
+  height: $btnsize;
+  width: $btnsize;
+  line-height: $btnsize;
+  span{
+      height: $btnsize;
+      padding: 0px !important;
+      i{
+          font-size: $fontsize;
+      }
+  }
+}
+.mat-fab{
+  @include change-button-size(100px, 15px);
+}
+
+.mat-icon {
+  width: 50px;
+  height: 50px;
+  font-size: 50px;
+  line-height: 50px;
 }

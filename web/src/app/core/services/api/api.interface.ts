@@ -6,6 +6,7 @@ interface RosPubSub {
 export interface CommunicationInterface {
   connection: Connection;
   controller: Controller;
+  telemetry: Telemetry;
 }
 
 interface Connection {
@@ -15,4 +16,8 @@ interface Connection {
 
 interface Controller {
   move: RosPubSub;
+}
+
+interface Telemetry {
+  pose: RosPubSub;
 }

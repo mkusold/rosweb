@@ -1,6 +1,9 @@
 <mat-card class="wrapper">
   <mat-card-title>Ros Turtlebot Controller</mat-card-title>
   <mat-card-content>
+    <div class="speed">
+      Turtle Bot is {{speed ? 'Moving' : 'Still'}}
+    </div>
     <div class="game-pad">
       <mat-grid-list cols="3" rowHeight="1:1">
         <!-- Creating a game pad
@@ -14,27 +17,44 @@
         <!-- Top Row -->
         <mat-grid-tile></mat-grid-tile>
         <mat-grid-tile>
-          <button mat-fab color="primary" aria-label="Move up">
+          <button
+            (click)="onDirectionComand(DirectionType.Up)"
+            mat-fab
+            color="primary"
+            aria-label="Move up">
             <mat-icon>keyboard_arrow_up</mat-icon>
           </button>
         </mat-grid-tile>
         <!-- Middle Row -->
         <mat-grid-tile></mat-grid-tile>
         <mat-grid-tile>
-          <button mat-fab color="primary" aria-label="Move left">
+          <button
+            (click)="onDirectionComand(DirectionType.Left)"
+            mat-fab
+            color="primary"
+            aria-label="Move left">
             <mat-icon>keyboard_arrow_left</mat-icon>
           </button>
         </mat-grid-tile>
         <mat-grid-tile></mat-grid-tile>
         <mat-grid-tile>
-          <button mat-fab color="primary" aria-label="Move right">
+          <button
+            (click)="onDirectionComand(DirectionType.Right)"
+            mat-fab
+            color="primary"
+            aria-label="Move right"
+            >
             <mat-icon>keyboard_arrow_right</mat-icon>
           </button>
         </mat-grid-tile>
         <!-- Bottom Row -->
         <mat-grid-tile></mat-grid-tile>
         <mat-grid-tile>
-          <button mat-fab color="primary" aria-label="Move down">
+          <button
+            (click)="onDirectionComand(DirectionType.Down)"
+            mat-fab
+            color="primary"
+            aria-label="Move down">
             <mat-icon>keyboard_arrow_down</mat-icon>
           </button>
         </mat-grid-tile>

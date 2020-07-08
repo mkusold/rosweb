@@ -70,7 +70,6 @@ const materialDesignModules = [
 @NgModule({
   imports: [
     CommonModule,
-
     ...materialDesignModules,
   ],
   declarations: [
