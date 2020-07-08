@@ -17,9 +17,10 @@ Create an extensible base template for ROS (1) projects that integrate with web 
 
 ### Prerequisites & Configuration
 
-1. Download and setup [docker](https://www.docker.com/get-started)
+1. Download and setup [docker](https://www.docker.com/get-started) Note: docker-compose is usually packaged with most Docker installations
 
 OSX:
+
 1. Download [XQuartz](https://www.xquartz.org/)
 2. Activate the option ‘Allow connections from network clients’ in XQuartz settings
 3. run `bash xquarzsetup.sh` and copy your IP address into the `.env` file

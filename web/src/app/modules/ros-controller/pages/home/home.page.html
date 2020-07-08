@@ -1,0 +1,51 @@
+<mat-card class="wrapper">
+  <mat-card-title>Ros Turtlebot Controller</mat-card-title>
+  <mat-card-content>
+    <div class="game-pad">
+      <mat-grid-list cols="3" rowHeight="1:1">
+        <!-- Creating a game pad
+          three columns wide
+            __________
+          |   | ^ |   |
+          | < |   | > |
+          |   | v |   |
+          -----------
+        -->
+        <!-- Top Row -->
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile>
+          <button mat-fab color="primary" aria-label="Move up">
+            <mat-icon>keyboard_arrow_up</mat-icon>
+          </button>
+        </mat-grid-tile>
+        <!-- Middle Row -->
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile>
+          <button mat-fab color="primary" aria-label="Move left">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+          </button>
+        </mat-grid-tile>
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile>
+          <button mat-fab color="primary" aria-label="Move right">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </button>
+        </mat-grid-tile>
+        <!-- Bottom Row -->
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile>
+          <button mat-fab color="primary" aria-label="Move down">
+            <mat-icon>keyboard_arrow_down</mat-icon>
+          </button>
+        </mat-grid-tile>
+        <mat-grid-tile></mat-grid-tile>
+      </mat-grid-list>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="resources">
+      <h2>Resources</h2>
+      <p>Here is the documentation for <a href="https://material.angular.io/components/button/overview" target="_blank">buttons</a></p>
+      <p>You can see a list of all available icons <a href="https://material.io/resources/icons/?style=baseline" target="_blank">here</a></p>
+    </div>
+  </mat-card-content>
+</mat-card>
