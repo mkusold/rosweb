@@ -12,7 +12,7 @@ pipelines:
             - echo "Launching container..." 
             - docker-compose up -f .ci.env
             - echo "Running tests..."
-            - docker run -i --rm -p 0.0.0.0:8080:8080 rosweb/rosweb:latest cd ./src/d2 && make test 
+            - docker run -i --rm -p 0.0.0.0:8080:8080 rosweb/rosweb:latest cd ./src/rosweb && make test 
 definitions:
   services:
     docker:

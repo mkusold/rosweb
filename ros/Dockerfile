@@ -16,6 +16,9 @@ ENV CATKIN_WS=/root/catkin_ws
 RUN apt-get update && apt-get install  --no-install-recommends -y \
   python-rosdep \
   python-pip \
+  python-future \
+  build-essential \
+  cmake \
   # for communicating to the roslib.js library
   ros-${ROS_DISTRO}-rosbridge-suite
 
@@ -23,6 +26,9 @@ RUN apt-get update && apt-get install  --no-install-recommends -y \
 RUN pip install --upgrade pip
 # install necessary package for external communication
 RUN pip install autobahn[twisted] pyOpenSSL tornado pymongo
+# bootstrap rosdep
+RUN rosdep init && \
+  rosdep update --rosdistro $ROS_DISTRO
 
 # ===========
 # Copy Stage

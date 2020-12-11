@@ -12,10 +12,10 @@ services:
                 - PKG_NAME
         ports:
             - "0.0.0.0:8080:8080"
-        environment:
-            - DISPLAY
-            - QT_X11_NO_MITSHM=1
-            - "XAUTHORITY=$XAUTH"
+        # environment:
+        #     - DISPLAY
+        #     - QT_X11_NO_MITSHM=1
+        #     - "XAUTHORITY=$XAUTH"
         # bind mount to the local resources directory
         volumes:
             # for development

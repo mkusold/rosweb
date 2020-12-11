@@ -23,12 +23,12 @@ OSX:
 
 1. Download [XQuartz](https://www.xquartz.org/)
 2. Activate the option ‘Allow connections from network clients’ in XQuartz settings
-3. run `bash xquarzsetup.sh` and copy your IP address into the `.env` file
+3. run `bash xquartzsetup.sh` and copy your IP address into the `.env` file
 
 ### ENV file
 
 1. The `.env` file stores the build and run configuration for the project's docker container.
-2. In particular, note the `ENV` varible in `.env` file. `ENV` could be one of `base`, `dev`, `test` or `prod`.
+2. In particular, note the `ENV` varible in `.env` file. `ENV` could be one of `base`, `dev`, or `prod`.
 
 ## Utilizing Docker
 
@@ -44,9 +44,9 @@ Run `docker-compose up`.
 
 * For development and testing:
   * In the `.env` file, make sure to change the ENV variable to `dev` - Docker Compose pulls all its environment variables from this `.env` file.
-  * In a separate terminal window, run `docker attach d2`
+  * In a separate terminal window, run `docker attach rosweb`
   * Go to this project's root directory (where the Makefile exists)
-  * To run all packages specified in the d2_bringup launch file, run `make run`.
+  * To run all packages specified in the rosweb_bringup launch file, run `make run`.
   * To see all make command options, simply run `make`.
 * For production, change the .env `ENV` variable to `prod` and run the docker image which should auto-start
 
